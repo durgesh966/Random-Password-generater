@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* start main container */
+.container {
+  left: 30%;
+  max-width: 100%;
+  width: 40%;
+  padding: 50px 100px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 0;
+  border-radius: 70px;
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+
+
+.container::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #399953;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#04f945, #063212), linear-gradient(#ffb700, #725304), linear-gradient(#ff2010, #640d07), linear-gradient(#085dfb, #052053);
+  animation: rotate 10s linear infinite;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  backdrop-filter: blur(520px);
+  border-radius: 70px;
+
+}
+
+
+@keyframes opacityChange {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+/* end main container */
+.pw-header {
+  padding: 1rem;
+}
+
+.pw {
+  width: 100%;
+  height: 70px;
+  border: dotted 4px;
+  border-radius: 4%;
+display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.pw button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, 50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  background-color: rgb(35, 5, 66);
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.pw:hover button {
+  opacity: 1;
+  transform: translate(0, -80%);
+}
+
+.pw-body {
+  padding: 0 1rem 1rem;
+}
+
+.form-control {
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.75rem 0;
+}
+
+.generate {
+  display: inline-block;
+  background-color: #ecb602;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  width: 70%;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 50px;
+  --borderWidth: 5px;
+  position: relative;
+}
